@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pipeline_survey_history,access_pipeline_survey_history,model_pipeline_survey_history,base.group_user,1,1,1,1
+
+
+
