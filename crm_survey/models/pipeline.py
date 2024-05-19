@@ -22,5 +22,17 @@ class PipelineSurveyHistory(models.Model):
 
     def open_answers(self):
         action = self.survey_id.action_survey_user_input_completed()
-        action['domain'] = [('survey_id', '=', self.survey_id.id)]
+        # Update the domain to filter survey answers based on the email_from field of the related crm.lead
+        leads = self.env['crm.lead'].search([('id', '=', self.pipeline_id.id)])
+        if leads:
+            email_from = leads[0].email_from
+            user_input_lines = self.env['survey.user_input.line'].search([('value_char_box', 'ilike', email_from)])
+            user_input_ids = user_input_lines.mapped('user_input_id').ids
+            action['domain'] = [('id', 'in', user_input_ids)]
         return action
+
+class SurveyUserInputLine(models.Model):
+    _inherit = 'survey.user_input.line'
+
+    value_char_box = fields.Char(string='Value Char Box')
+
