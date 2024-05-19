@@ -13,12 +13,10 @@ class PipelineSurveyHistory(models.Model):
     survey_id = fields.Many2one('survey.survey', string='Survey', required=True)
     survey_answer_id = fields.Many2one('survey.user_input', string='Answer')
 
-    user_id = fields.Many2one('res.users', string='User', related='survey_id.user_id', store=True)
     answer_duration_avg = fields.Float(string='Average Answer Duration', related='survey_id.answer_duration_avg', store=True)
     answer_count = fields.Integer(string='Total Answers', related='survey_id.answer_count', store=True)
     answer_done_count = fields.Integer(string='Completed Answers', related='survey_id.answer_done_count', store=True)
-    success_count = fields.Integer(string='Success Count', related='survey_id.success_count', store=True)
-
+    
     def action_send_survey(self):
         return self.survey_id.action_send_survey()
 

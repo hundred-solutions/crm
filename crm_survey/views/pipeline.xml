@@ -10,11 +10,9 @@
                     <field name="survey_history_ids">
                         <tree editable="bottom">
                             <field name="survey_id"/>
-                            <field name="user_id"/>
                             <field name="answer_duration_avg"/>
                             <field name="answer_count"/>
                             <field name="answer_done_count"/>
-                            <field name="success_count"/>
                             <button name="action_send_survey"
                                     type="object"
                                     string="Share Survey"
@@ -30,11 +28,9 @@
                                     <field name="survey_id"/>
                                 </group>
                                 <group>
-                                    <field name="user_id"/>
                                     <field name="answer_duration_avg"/>
                                     <field name="answer_count"/>
                                     <field name="answer_done_count"/>
-                                    <field name="success_count"/>
                                 </group>
                             </group>
                         </form>
