@@ -4,9 +4,11 @@
     'sequence': 1,
     'category': 'Sales',
     'description': 'This Module integrate Surveys with CRM',
+    "license": "AGPL-3",
     'depends': ['crm', 'survey', 'website'],
     'data': [
         'security/ir.model.access.csv',
+        'data/template_survey_start.xml',
         'views/pipeline.xml',
     ],
     'installable': True,

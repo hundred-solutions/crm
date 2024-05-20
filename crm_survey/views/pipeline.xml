@@ -13,10 +13,14 @@
                             <field name="answer_duration_avg"/>
                             <field name="answer_count"/>
                             <field name="answer_done_count"/>
-                            <button name="action_send_survey"
+                            <button name="send_survey_to_customer"
                                     type="object"
-                                    string="Share Survey"
+                                    string="Send Survey"
                                     icon="fa-paper-plane"/>
+                            <button name="action_start_survey"
+                                    type="object"
+                                    string="Start Survey"
+                                    icon="fa-play-circle"/>
                             <button name="open_answers"
                                     type="object"
                                     string="Participants"
