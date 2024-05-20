@@ -12,7 +12,6 @@
         'views/pipeline.xml',
     ],
     'installable': True,
-    'application': True,
     'auto_install': False,
     'author': 'Hundred Solutions Pvt.Ltd',
     'website': 'http://www.hundredsolutions.com',    
